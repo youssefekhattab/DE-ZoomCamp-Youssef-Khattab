@@ -1,1 +1,19 @@
+if 'transformer' not in globals():
+    from mage_ai.data_preparation.decorators import transformer
+if 'test' not in globals():
+    from mage_ai.data_preparation.decorators import test
 
+import pandas as pd
+
+@transformer
+def transform_data(dataframe):
+    # Remove rows where passenger count or trip distance is zero
+    dataframe = dataframe[(dataframe['passenger_count'] > 0) & (dataframe['trip_distance'] > 0)]
+
+    # Create new column lpep_pickup_date
+    dataframe['lpep_pickup_date'] = dataframe['lpep_pickup_datetime'].dt.date
+
+    # Rename columns in Camel Case to Snake Case
+    dataframe = dataframe.rename(columns=lambda x: x.lower() if x.isupper() else x)
+
+    return dataframe
