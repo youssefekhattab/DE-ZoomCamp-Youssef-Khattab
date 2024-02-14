@@ -1,1 +1,28 @@
+Q1
+SELECT COUNT(*) AS record_count
+FROM `hopeful-expanse-412815.week3_de_zoomcamp.week3`;
 
+
+Q2
+SELECT
+  EXACT_COUNT_DISTINCT(PULocationID) AS distinct_count,
+  APPROXIMATE_SIZE(PULocationID) AS estimated_data_size
+FROM
+ `hopeful-expanse-412815.week3_de_zoomcamp.week3`;
+---------------------------------------
+SELECT
+  EXACT_COUNT_DISTINCT(PULocationID) AS distinct_count,
+  APPROXIMATE_SIZE(PULocationID) AS estimated_data_size
+FROM
+ `hopeful-expanse-412815.week3_de_zoomcamp.week3`;
+
+
+Q3
+SELECT COUNT(*) AS 
+FROM `hopeful-expanse-412815.week3_de_zoomcamp.week3`
+WHERE fare_amount = 0;
+
+-- Query for Internal Table
+SELECT COUNT(*) AS 
+FROM `hopeful-expanse-412815.week3_de_zoomcamp.week3`
+WHERE fare_amount = 0;
