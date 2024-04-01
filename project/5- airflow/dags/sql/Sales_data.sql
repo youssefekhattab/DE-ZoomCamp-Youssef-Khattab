@@ -1,7 +1,7 @@
 INSERT {{ BIGQUERY_DATASET }}.{{ CUSTOMER_SHOPPING_DATA_TABLE }}
 SELECT
-    COALESCE(invoice_no, 'NA') AS invoice_no,
     COALESCE(customer_id, 'NA') AS customer_id,
+    COALESCE(gender, 'NA') AS gender,
     COALESCE(gender, 'NA') AS gender,
     COALESCE(age, -1) AS age,
     COALESCE(category, 'NA') AS category,
@@ -13,3 +13,29 @@ SELECT
 
 FROM {{ BIGQUERY_DATASET }}.{{ CUSTOMER_SHOPPING_DATA_TABLE}}_{{ logical_date.strftime("%m%d%H") }} -- Creates a table name with month day and hour values appended to it
                                                                                       -- like customer_shopping_data.json_032313 for 23-03-2022 13:00:00
+{"Sales_ID": "ORDERNUMBER": int(row[0]),
+            "QUANTITYORDERED": int(row[1]),
+            "PRICEEACH": float(row[2]),
+            "ORDERLINENUMBER": int(row[3]),
+            "SALES": str(row[4]),
+            "ORDERDATE": datetime.strptime(row[8], '%d/%m/%Y/%H/%M'),
+            "STATUS": str(row[5]),
+            "QTR_ID": float(row[6]),
+            "MONTH_ID": int(row[7]),
+            "YEAR_ID": int(row[7]),
+            "PRODUCTLINE": str(row[7]),
+            "MSRP": int(row[7]),
+            "PRODUCTCODE": str(row[7]),
+            "CUSTOMERNAME": str(row[7]),
+            "PHONE": str(row[7]),
+            "ADDRESSLINE1": str(row[7]),
+            "ADDRESSLINE2": str(row[7]),
+            "CITY": str(row[7]),
+            "STATE": str(row[9])
+            "POSTALCODE": int(row[7]),
+            "COUNTRY": str(row[7]),
+            "TERRITORY": str(row[7]),
+            "CONTACTLASTNAME": str(row[7]),
+            "CONTACTFIRSTNAME": str(row[7]),
+            "DEALSIZE": str(row[7]),
+            }
