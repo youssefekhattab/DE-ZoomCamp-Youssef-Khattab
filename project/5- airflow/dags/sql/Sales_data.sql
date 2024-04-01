@@ -13,7 +13,7 @@ SELECT
 
 FROM {{ BIGQUERY_DATASET }}.{{ CUSTOMER_SHOPPING_DATA_TABLE}}_{{ logical_date.strftime("%m%d%H") }} -- Creates a table name with month day and hour values appended to it
                                                                                       -- like customer_shopping_data.json_032313 for 23-03-2022 13:00:00
-{"Sales_ID": "ORDERNUMBER": int(row[0]),
+{"Sales_data": "ORDERNUMBER": int(row[0]),
             "QUANTITYORDERED": int(row[1]),
             "PRICEEACH": float(row[2]),
             "ORDERLINENUMBER": int(row[3]),
