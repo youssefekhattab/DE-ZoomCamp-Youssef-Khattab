@@ -4,7 +4,7 @@ echo "Changing permissions for dbt folder..."
 cd ~/Sales && sudo chmod -R 777 5_dbt
 
 echo "Building airflow docker images..."
-cd ~/retail-sales/6_airflow
+cd ~/Sales/6_airflow
 docker-compose build
 
 echo "Running airflow-init..."
