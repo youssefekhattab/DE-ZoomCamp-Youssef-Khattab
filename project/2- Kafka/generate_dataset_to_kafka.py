@@ -48,6 +48,6 @@ for row in csvreader:
 
   
   
-    producer.send('customer_shopping_data', value=value, key=key)
+    producer.send('Sales_data', value=value, key=key)
     print(value)
     sleep(1)
